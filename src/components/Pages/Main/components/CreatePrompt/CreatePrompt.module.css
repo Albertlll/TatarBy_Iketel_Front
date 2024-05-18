@@ -1,0 +1,95 @@
+
+.roadmap_block{
+    display: inline-block;
+}
+
+.main{
+    position: absolute;
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 17px;
+    align-items: center;
+}
+
+
+.inp_wrapper{
+    top: 50%;
+    margin-top: 20px;
+    height: 100px;
+    width: 761px;
+    outline: none;
+    border: 3px solid var(--fg_color);;
+    border-radius: 25px;
+
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.textarea_input_wrapper{
+    height: 200px !important;
+    border: 3px solid var(--fg_color);;
+    border-radius: 25px;
+
+}
+
+
+.textarea_input{
+    font-family: Blazma;
+    height: 100%;
+
+    border-radius: 25px;
+    color: var(--fg_color);
+    background-color: var(--bg_color);
+    font-weight: 700;
+    font-size: 25px;
+
+    border: none;
+}
+
+.enter_input{
+    font-family: Blazma;
+    height: 67px;
+    margin-left: 48px;
+    width: calc(100% - 48px);
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    color: var(--fg_color);
+    background-color: var(--bg_color);
+    font-weight: 700;
+    font-size: 25px;
+    
+}
+
+.enter_input::placeholder{
+    font-family: Blazma;
+    font-weight: 700;
+    font-size: 25px;
+    color: var(--sub_fg_color);
+}
+.enter_btn{
+    background-color: var(--fg_color);
+    border-radius: 25px;
+    color:  var(--bg_color);;
+    font-family: Blazma;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 15px 30px 15px 30px;
+    border: none;
+    margin-top: 17px;
+}
+
+.enter_btn:hover{
+    background-color: rgba(64, 144, 255, 0.8);
+    
+}
+
+@media (width <= 1463px){
+    .inp_wrapper{
+         width: calc(100% - 30px);
+     }
+    
+}
