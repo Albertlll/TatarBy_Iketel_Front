@@ -99,4 +99,28 @@
     .variants_cont{
         grid-template-columns: 1fr;
     }
+    .cloud{
+        display: none;
+    }
+    .cloud_cont{
+        position: relative;
+        /* margin-left: 252px; */
+        /* margin-top: 62px; */
+        /* height: 145px; */
+        width: calc(100% - 30px);
+    }
+    .task_title{
+        font-family: Blazma;
+        color: var(--lesson_color);
+        /* font-size: 40px; */
+        position: absolute;
+        /* margin-left: 108px; */
+        /* margin-top: 26px; */
+    }
+
+    
+
+    
+
+
 }

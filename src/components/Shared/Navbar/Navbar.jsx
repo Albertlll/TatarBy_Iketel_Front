@@ -16,8 +16,11 @@ function Navbar() {
             <div className={s.left_part}>ИкеТель</div>
             <div className={s.right_part}>
                 <ul>
-                    <li><NavLink to="/">{user ? user.username : "sd"}</NavLink></li>
-                    <li><NavLink to="/login">Настройки</NavLink></li>
+            <li className={s.MenuLi}><NavLink to="/login">Войти</NavLink></li>
+            {user ? <li className={s.MenuLi} onClick={()=>{console.log('fvf')}}>Выход</li> : ''}
+            <li className={s.MenuLi} onClick={()=>{console.log('fvf')}}><NavLink to="/">Пройти</NavLink></li>
+            <li className={s.MenuLi}><NavLink to="/login">Создать</NavLink></li>
+
                 </ul>
             </div>
 

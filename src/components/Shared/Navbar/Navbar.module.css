@@ -35,7 +35,7 @@ header li{
     display: inline;
 }
 
-@media (width < 915px){
+@media (width < 1463px){
     .right_part{
         display: none;
     }

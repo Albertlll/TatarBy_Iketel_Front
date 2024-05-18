@@ -83,7 +83,7 @@ function Lesson() {
         <h1 className={s.que}>Выбери правильный ответ</h1>
 
         <div className={s.character_block}>
-            <img src='' alt='' />
+            <img src={myImage} alt='' />
             <div className={s.cloud_cont}>
                 <img src={cloud} className={s.cloud} alt="" />
                 <div className={s.task_title}>{task.title}</div>

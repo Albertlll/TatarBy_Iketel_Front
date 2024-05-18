@@ -38,7 +38,7 @@ function Login() {
 
                     <button  className={s.enter_btn} type="button" onClick={() => logInUser()}>Войти</button>
                     <ul className={s.enter_help_links}>
-                        <li>Забыли пароль?</li>
+                        <li><NavLink to="/">Пройти квест</NavLink></li>
                         <li><NavLink to="/registration">Нет аккаунта?</NavLink></li>
                     </ul>
                 </div>
