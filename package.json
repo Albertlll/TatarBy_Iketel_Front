@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://albertlll.github.io/iketel_Frontend/",
+  "homepage": "https://albertlll.github.io/TatarBy_Iketel_Front",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

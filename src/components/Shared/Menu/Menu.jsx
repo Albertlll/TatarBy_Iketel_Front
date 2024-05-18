@@ -12,7 +12,7 @@ function Menu()
         <ul className={s.MenuUl}>
 
             <li className={s.MenuLi}><NavLink to="/"></NavLink></li>
-            <li className={s.MenuLi}><NavLink to="/login"></NavLink></li>
+            <li className={s.MenuLi}><NavLink to="/login">Войти</NavLink></li>
             <li className={s.MenuLi} onClick={()=>{console.log('fvf')}}>Выход</li>
         </ul>
     </div>)

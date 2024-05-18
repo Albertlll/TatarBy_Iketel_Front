@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename='/iketel_Frontend'>
+    <BrowserRouter basename='/TatarBy_Iketel_Front'>
       <ContextProviderUser>
 
       <ContextProviderMenu>

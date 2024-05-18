@@ -4,7 +4,7 @@ import Menu from "../../Shared/Menu/Menu";
 import Navbar from "../../Shared/Navbar/Navbar";
 import s from './Main.module.css'
 import { UserContext } from '../../../../contexts/CotextProviderUser';
-import Roadmap from "./components/Roadmap/Roadmap";
+import EnterToQuest from "./components/EnterToQuest/EnterToQuest";
 import Lesson from "./components/Lesson/Lesson";
 import { Route, Routes } from "react-router-dom";
 function  Main() {
@@ -34,10 +34,10 @@ function  Main() {
 
     return (
     <div id={s.Main_cont}>
-            <Routes>
-                <Route path="/" element={<Roadmap />} />
-                <Route path="lesson" element={<Lesson />} />
 
+            <Routes>
+                <Route path="/" element={<EnterToQuest />} />
+                <Route path="lesson" element={<Lesson />} />
             </Routes>
             {/* <h1>
                 { user ? user.username : 'Anonymous'}
@@ -45,4 +45,4 @@ function  Main() {
     </div>);
 }
 
-export default  Main;
+export default Main;

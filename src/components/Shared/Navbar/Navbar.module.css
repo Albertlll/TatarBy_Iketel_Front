@@ -5,6 +5,7 @@ header{
     background-color: var(--bg_color);
     color: var(--fg_color);
     border-bottom: 3px solid var(--border_bottom_color);
+    z-index: 10;
 }
 
 .header_content{
