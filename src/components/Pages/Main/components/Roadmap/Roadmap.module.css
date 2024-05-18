@@ -1,0 +1,12 @@
+
+.roadmap_block{
+    display: inline-block;
+}
+
+.main{
+    position: absolute;
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}

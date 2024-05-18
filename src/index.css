@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --bg_color: #19272d;
+  --fg_color: #38ff40;
+  --border_bottom_color: #259029;
+  --sub_fg_color: #8CFF91;
+
+  --lesson_color: #C1E4C3;
+  --fail_color: #E75E5E;
+  /* overflow: hidden; */
+}
+
+
+@font-face {
+  font-family: Blazma;
+  src: url('./fonts/Blazma-Regular.otf');
+}
+
+
+a{
+  text-decoration: none;
+  color: var(--fg_color);
+}

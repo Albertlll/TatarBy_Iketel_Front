@@ -1,0 +1,10 @@
+.tasks_line{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task_rect{
+    width: 64px;
+    height: 64px;
+}

@@ -1,0 +1,21 @@
+.wire{
+    position: absolute;
+    left: 282px;
+    top: 255px
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.roadmap_block{
+    display: inline-block;
+    width: 470px;
+    height: 382px;
+    position: relative;
+}

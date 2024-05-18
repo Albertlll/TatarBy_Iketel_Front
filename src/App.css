@@ -1,0 +1,9 @@
+.main{
+    margin-top: 150px;
+    position: absolute;
+    width: 100%;
+}
+
+body{
+    background-color: var(--bg_color);
+}
