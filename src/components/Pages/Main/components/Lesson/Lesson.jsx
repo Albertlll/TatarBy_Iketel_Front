@@ -5,48 +5,136 @@ import disabled from './img/icons/answers/disabled.svg'
 import not_right from './img/icons/answers/not_right.svg'
 import right from './img/icons/answers/right.svg'
 import cloud from './img/cloud.svg'
-import myImage from './img/default.png';
+import unicorn from './img/default.png';
 import Progress from './components/Progress/Progress';
 import Variants from './components/Variants/Variants';
+import data from './tatarby.json'
+
+
 function Lesson() {
 
-    const tasks = [
-        {
-            "title": 'Кто лучший программист в CitCode?',
-            "variants": ['Булат', 'Алан', 'Дамир', 'Мурат'],
-            "answer": 1,
-            "state": 0
-        },
+    
+    // const quests = [
+    //     {
+    //         'replika': 'Привет',
+    //         'art': '...',
+    //         'tasks': [
+    //             {
+    //                 "title": 'Кто лучший программист в CitCode?',
+    //                 "variants": ['Булат', 'Алан', 'Дамир', 'Мурат'],
+    //                 "answer": 1,
+    //                 "state": 0
+    //             },
+        
+    //             {
+    //                 "title": "Какой элемент является основой для жизни на Земле?",
+    //                 "variants": ["Кислород", "Углерод", "Водород", "Азот"],
+    //                 "answer": 1,
+    //                 "state": 0
+        
+    //             },
+    //             {
+    //                 "title": "В каком году был основан город Казань?",
+    //                 "variants": ["1005", "1167", "1221", "1552"],
+    //                 "answer": 1,
+    //                 "state": 0
+        
+    //             },
+    //             {
+    //                 "title": "Какой язык считается одним из самых распространённых в мире?",
+    //                 "variants": ["Английский", "Испанский", "Китайский", "Русский"],
+    //                 "answer": 2,
+    //                 "state": 0
+        
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         'replika': 'Привет',
+    //         'art': '...',
+    //         'tasks': [
+    //             {
+    //                 "title": 'Кто лучший программист в CitCode?',
+    //                 "variants": ['Булат', 'Алан', 'Дамир', 'Мурат'],
+    //                 "answer": 1,
+    //                 "state": 0
+    //             },
+        
+    //             {
+    //                 "title": "Какой элемент является основой для жизни на Земле?",
+    //                 "variants": ["Кислород", "Углерод", "Водород", "Азот"],
+    //                 "answer": 1,
+    //                 "state": 0
+        
+    //             },
+    //             {
+    //                 "title": "В каком году был основан город Казань?",
+    //                 "variants": ["1005", "1167", "1221", "1552"],
+    //                 "answer": 1,
+    //                 "state": 0
+        
+    //             },
+    //             {
+    //                 "title": "Какой язык считается одним из самых распространённых в мире?",
+    //                 "variants": ["Английский", "Испанский", "Китайский", "Русский"],
+    //                 "answer": 2,
+    //                 "state": 0
+        
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         'replika': 'Привет',
+    //         'art': '...',
+    //         'tasks': [
+    //             {
+    //                 "title": 'Кто лучший программист в CitCode?',
+    //                 "variants": ['Булат', 'Алан', 'Дамир', 'Мурат'],
+    //                 "answer": 1,
+    //                 "state": 0
+    //             },
+        
+    //             {
+    //                 "title": "Какой элемент является основой для жизни на Земле?",
+    //                 "variants": ["Кислород", "Углерод", "Водород", "Азот"],
+    //                 "answer": 1,
+    //                 "state": 0
+        
+    //             },
+    //             {
+    //                 "title": "В каком году был основан город Казань?",
+    //                 "variants": ["1005", "1167", "1221", "1552"],
+    //                 "answer": 1,
+    //                 "state": 0
+        
+    //             },
+    //             {
+    //                 "title": "Какой язык считается одним из самых распространённых в мире?",
+    //                 "variants": ["Английский", "Испанский", "Китайский", "Русский"],
+    //                 "answer": 2,
+    //                 "state": 0
+        
+    //             }
+    //         ]
+    //     }
+    // ]
 
-        {
-            "title": "Какой элемент является основой для жизни на Земле?",
-            "variants": ["Кислород", "Углерод", "Водород", "Азот"],
-            "answer": 1,
-            "state": 0
-
-        },
-        {
-            "title": "В каком году был основан город Казань?",
-            "variants": ["1005", "1167", "1221", "1552"],
-            "answer": 1,
-            "state": 0
-
-        },
-        {
-            "title": "Какой язык считается одним из самых распространённых в мире?",
-            "variants": ["Английский", "Испанский", "Китайский", "Русский"],
-            "answer": 2,
-            "state": 0
-
-        }
-    ]
+    // console.log(data)
 
     const [step, setStep] = useState(0);
-    const [statetype, setStatetype] = useState({'type': 0, 'answer': 0});
-    const [tasks_data, setTasks] = useState(tasks);
+    const [q_index, setQindex] = useState(0);
+    const [message_showed, setMessageShowed] = useState(false);
 
+
+
+    
+    const [statetype, setStatetype] = useState({'type': 0, 'answer': 0});
+    const quest = data[q_index];
+    const task = quest.tasks[step];
+    const [tasks_data, setTasks] = useState(quest.tasks);
+    const [character, setCharacter] = useState(unicorn);
     // const content = isSelected ? 'selected' : '';
-    const task = tasks[step];
+
 
     const handleCheck = () => {
         if (statetype.answer === task.answer) {
@@ -62,8 +150,20 @@ function Lesson() {
     }
 
     const handleNext = () => {
-        setStep(step + 1);
-        setStatetype({'type': 0, 'answer': 0});
+        if (step === 7){
+            setMessageShowed(false);
+            setQindex(q_index + 1);
+            setStep(0);
+            setStatetype({'type': 0, 'answer': 0});
+            tasks_data.forEach(element => {
+                element[step].state = 0;
+            });
+        }else{
+            setStep(step + 1);
+            setStatetype({'type': 0, 'answer': 0});
+
+        }
+
     }
 
 
@@ -77,13 +177,28 @@ function Lesson() {
     }
 
     return (
+    <>
+
+    <div className={(!message_showed && step == 0) ? s.replica_visible : s.replica_nonvisible}>
+        <img src={character} alt="" />
+\
+        <div className={s.replica_text}>
+            {quest.replika}
+        </div>
+
+        <div className={s.check_btn_cont}>
+            <button onClick={() => {setMessageShowed(true)}} className={s.check_btn}>Далее</button>
+        </div>
+
+    </div>
+
     <div className={s.lesson_card}>
         <Progress tasks={tasks_data}></Progress>
 
         <h1 className={s.que}>Выбери правильный ответ</h1>
 
         <div className={s.character_block}>
-            <img src={myImage} alt='' />
+            <img src={character} alt='' />
             <div className={s.cloud_cont}>
                 <img src={cloud} className={s.cloud} alt="" />
                 <div className={s.task_title}>{task.title}</div>
@@ -101,7 +216,9 @@ function Lesson() {
             {statetype.type != 0 ? 'Дальше' : 'Проверить'}</button>
         </div>
 
-    </div>);
+    </div>
+    
+    </>);
 }
 
 export default Lesson;

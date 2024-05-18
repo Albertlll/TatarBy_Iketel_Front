@@ -92,6 +92,25 @@
 }
 
 
+.replica_visible{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg_color);
+    position: fixed;
+    overflow: hidden;
+    z-index: 11;
+}
+
+.replica_nonvisible{
+    display: none;
+    background-color: var(--fg_color);
+}
+.replica_text{
+    font-family: Blazma;
+    color: var(--lesson_color);
+    font-size: 10px;
+}
+
 @media (width < 1096px) {
     .lesson_card{
         width: calc(100% - 30px);

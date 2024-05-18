@@ -19,7 +19,7 @@ function Navbar() {
             <li className={s.MenuLi}><NavLink to="/login">Войти</NavLink></li>
             {user ? <li className={s.MenuLi} onClick={()=>{console.log('fvf')}}>Выход</li> : ''}
             <li className={s.MenuLi} onClick={()=>{console.log('fvf')}}><NavLink to="/">Пройти</NavLink></li>
-            <li className={s.MenuLi}><NavLink to="/login">Создать</NavLink></li>
+            <li className={s.MenuLi}><NavLink to="/create">Создать</NavLink></li>
 
                 </ul>
             </div>

@@ -7,6 +7,7 @@ import { UserContext } from '../../../../contexts/CotextProviderUser';
 import EnterToQuest from "./components/EnterToQuest/EnterToQuest";
 import Lesson from "./components/Lesson/Lesson";
 import { Route, Routes } from "react-router-dom";
+import CreatePrompt from  "./components/CreatePrompt/CreatePrompt"
 function  Main() {
     const {user, setUser} = useContext(UserContext)
     // useEffect(() => {
@@ -38,6 +39,8 @@ function  Main() {
             <Routes>
                 <Route path="/" element={<EnterToQuest />} />
                 <Route path="lesson" element={<Lesson />} />
+                <Route path="create" element={<CreatePrompt />} />
+
             </Routes>
             {/* <h1>
                 { user ? user.username : 'Anonymous'}
