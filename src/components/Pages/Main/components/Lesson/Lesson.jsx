@@ -8,10 +8,12 @@ import cloud from './img/cloud.svg'
 import unicorn from './img/default.png';
 import Progress from './components/Progress/Progress';
 import Variants from './components/Variants/Variants';
-import data from './tatarby.json'
-
+import data from './knightII.json'
+import cloud_replica from './img/cloud_replica.svg'
 
 function Lesson() {
+    const [count, setCount] = useState(0)
+    const [result_show, setResultShow] = useState(false);
 
     
     // const quests = [
@@ -125,12 +127,12 @@ function Lesson() {
     const [q_index, setQindex] = useState(0);
     const [message_showed, setMessageShowed] = useState(false);
 
-
-
     
     const [statetype, setStatetype] = useState({'type': 0, 'answer': 0});
+
     const quest = data[q_index];
     const task = quest.tasks[step];
+
     const [tasks_data, setTasks] = useState(quest.tasks);
     const [character, setCharacter] = useState(unicorn);
     // const content = isSelected ? 'selected' : '';
@@ -140,24 +142,36 @@ function Lesson() {
         if (statetype.answer === task.answer) {
             tasks_data[step].state = 1;
             setTasks(tasks_data);
+            setCount(count + 1);
             setStatetype({'type': 1, 'answer': statetype.answer});
         } else {
             tasks_data[step].state = 2;
             setTasks(tasks_data);
             setStatetype({'type': 2, 'answer': statetype.answer});
         }
-        console.log(tasks_data);
+        console.log(count);
     }
 
     const handleNext = () => {
         if (step === 7){
+            if (q_index  == data.length  - 1){
+                setResultShow(true);
+            }
+
+
             setMessageShowed(false);
-            setQindex(q_index + 1);
             setStep(0);
+            console.log(q_index)
+
+            setQindex(q_index + 1);
+            console.log(q_index)
+
             setStatetype({'type': 0, 'answer': 0});
-            tasks_data.forEach(element => {
-                element[step].state = 0;
-            });
+
+            console.log(q_index)
+            // setCharacter(data[q_index + 1].image_url)
+
+            tasks_data.map((task) => {task.state = 0})
         }else{
             setStep(step + 1);
             setStatetype({'type': 0, 'answer': 0});
@@ -180,8 +194,10 @@ function Lesson() {
     <>
 
     <div className={(!message_showed && step == 0) ? s.replica_visible : s.replica_nonvisible}>
-        <img src={character} alt="" />
-\
+        <img className={s.character} src={character} alt="" />
+        <img className={s.cloud_replica} src={cloud_replica} alt="" />
+
+
         <div className={s.replica_text}>
             {quest.replika}
         </div>
@@ -192,13 +208,15 @@ function Lesson() {
 
     </div>
 
+    <div className={s.result}>{result_show ? 'Ваш результат: ' + count : ''}</div>
+
     <div className={s.lesson_card}>
         <Progress tasks={tasks_data}></Progress>
 
         <h1 className={s.que}>Выбери правильный ответ</h1>
 
         <div className={s.character_block}>
-            <img src={character} alt='' />
+            <img src={character} className={s.task_character} alt='' />
             <div className={s.cloud_cont}>
                 <img src={cloud} className={s.cloud} alt="" />
                 <div className={s.task_title}>{task.title}</div>

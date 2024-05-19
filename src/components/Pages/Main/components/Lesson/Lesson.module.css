@@ -91,6 +91,18 @@
     color: var(--bg_color) !important;
 }
 
+.character{
+    position: absolute;
+    height: 300px;
+    width:auto;
+}
+
+.task_character{
+    /* position: absolute; */
+    height: 200px;
+    /* border-radius: 200px; */
+    width:auto;
+}
 
 .replica_visible{
     height: 100vh;
@@ -108,7 +120,24 @@
 .replica_text{
     font-family: Blazma;
     color: var(--lesson_color);
-    font-size: 10px;
+    font-size: 20px;
+    position: absolute;
+    width: 1089px;
+    margin-left: 419px;
+    margin-top: 132px;
+}
+
+
+.cloud_replica{
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 100px;
+}
+
+.result{
+    position: fixed;
+    margin-left: 300px;
+    margin-top: 100px;
 }
 
 @media (width < 1096px) {

@@ -7,14 +7,19 @@
     position: absolute;
     margin-top: 100px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 17px;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    }
+
+.key{
+    font-family: Blazma;
+    font-size: 30px;
+    color: var(--sub_fg_color);
 }
 
-
+.left_block{
+    width: 761px;
+}
 .inp_wrapper{
     top: 50%;
     margin-top: 20px;
@@ -32,22 +37,31 @@
     height: 200px !important;
     border: 3px solid var(--fg_color);;
     border-radius: 25px;
+    width: 761px;
+    margin-top: 50px;
+    
 
 }
 
 
 .textarea_input{
     font-family: Blazma;
-    height: 100%;
+    height: calc(100% - 30px);
+    width: 80%;
+    left: 30px;
+    position: relative;
+    top: 30px;
 
     border-radius: 25px;
-    color: var(--fg_color);
+    color: var(--sub_fg_color);
     background-color: var(--bg_color);
     font-weight: 700;
     font-size: 25px;
 
     border: none;
+    outline: none;
 }
+
 
 .enter_input{
     font-family: Blazma;
@@ -80,11 +94,26 @@
     padding: 15px 30px 15px 30px;
     border: none;
     margin-top: 17px;
+    width: 100%;
+}
+.ch{
+    margin-top: 10px;
+    width: 401px;
 }
 
+.ch_area{
+    height: 100px !important; 
+}
 .enter_btn:hover{
     background-color: rgba(64, 144, 255, 0.8);
     
+}
+
+.right_block{
+    width: 870px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 @media (width <= 1463px){
