@@ -4,6 +4,7 @@ import Navbar from '../../../../Shared/Navbar/Navbar';
 import { useState } from "react";
 function CreatePrompt() {
 
+    const [key, setKey] = useState(null);
 
     const PostPrompt = async () => {
         const response = await httoClient.post("/lesson",
@@ -15,10 +16,9 @@ function CreatePrompt() {
 
         });
         
-        setKey(response.data)
+        setKey(response.data.code)
     }
 
-    const [key, setKey] = useState(null);
 
 
 

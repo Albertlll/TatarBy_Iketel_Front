@@ -7,8 +7,9 @@ import right from './img/icons/answers/right.svg'
 import cloud from './img/cloud.svg'
 import unicorn from './img/default.png';
 import Progress from './components/Progress/Progress';
+
 import Variants from './components/Variants/Variants';
-import data from './knightII.json'
+import data from './OKSANA.json'
 import cloud_replica from './img/cloud_replica.svg'
 
 function Lesson() {
@@ -125,6 +126,7 @@ function Lesson() {
 
     const [step, setStep] = useState(0);
     const [q_index, setQindex] = useState(0);
+
     const [message_showed, setMessageShowed] = useState(false);
 
     
@@ -132,9 +134,10 @@ function Lesson() {
 
     const quest = data[q_index];
     const task = quest.tasks[step];
+    const character = quest.image_url;
 
     const [tasks_data, setTasks] = useState(quest.tasks);
-    const [character, setCharacter] = useState(unicorn);
+    // const [character, setCharacter] = useState(quest.image_url);
     // const content = isSelected ? 'selected' : '';
 
 
@@ -161,15 +164,13 @@ function Lesson() {
 
             setMessageShowed(false);
             setStep(0);
-            console.log(q_index)
 
-            setQindex(q_index + 1);
-            console.log(q_index)
-
+            console.log(q_index);
+            setQindex(prev => prev + 1);
+            console.log(q_index);
             setStatetype({'type': 0, 'answer': 0});
 
-            console.log(q_index)
-            // setCharacter(data[q_index + 1].image_url)
+            // setCharacter(quest.image_url)
 
             tasks_data.map((task) => {task.state = 0})
         }else{
@@ -179,7 +180,6 @@ function Lesson() {
         }
 
     }
-
 
     var specialclass = s.selected;
     if (statetype.type === 1) {

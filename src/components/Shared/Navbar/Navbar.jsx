@@ -13,7 +13,7 @@ function Navbar() {
     return (
     <header>
         <div className={s.header_content}>
-            <div className={s.left_part}>ИкеТель</div>
+            <div className={s.left_part}>ИкеТел</div>
             <div className={s.right_part}>
                 <ul>
             <li className={s.MenuLi}><NavLink to="/login">Войти</NavLink></li>
