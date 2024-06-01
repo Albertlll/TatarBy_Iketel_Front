@@ -5,6 +5,8 @@ import Menu from "./components/Shared/Menu/Menu";
 import { Routes, Route } from 'react-router-dom';
 import Login from './components/Pages/Login/Login';
 import Reg from './components/Pages/Reg/Reg';
+import Lesson from "./components/Pages/Main/components/Lesson/Lesson";
+
 function App() {
 
   return (
@@ -14,6 +16,8 @@ function App() {
           <Route path="/*" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Reg />} />
+          <Route path="/lesson" element={<Lesson />} />
+
         </Routes>
           {/* <div className='main'>
 

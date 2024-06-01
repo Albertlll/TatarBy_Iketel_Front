@@ -38,8 +38,8 @@ function  Main() {
 
             <Routes>
                 <Route path="/" element={<EnterToQuest />} />
-                <Route path="lesson" element={<Lesson />} />
-                <Route path="create" element={<CreatePrompt />} />
+                {/* <Route path="/lesson" element={<Lesson />} /> */}
+                <Route path="/create" element={<CreatePrompt />} />
 
             </Routes>
             {/* <h1>
