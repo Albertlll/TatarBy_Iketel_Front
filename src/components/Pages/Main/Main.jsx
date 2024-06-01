@@ -37,10 +37,9 @@ function  Main() {
     <div id={s.Main_cont}>
 
             <Routes>
-                <Route path="/" element={<EnterToQuest />} />
-                {/* <Route path="/lesson" element={<Lesson />} /> */}
-                <Route path="/create" element={<CreatePrompt />} />
-
+                <Route path="/" element={<EnterToQuest/>}/>
+                <Route path="/lesson" element={<Lesson/>}/>
+                <Route path="/create" element={<CreatePrompt/>}/>
             </Routes>
             {/* <h1>
                 { user ? user.username : 'Anonymous'}
