@@ -1,8 +1,7 @@
-# React + Vite
+# Икетел - платформа для обучения татарскому языку
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Платформа представляет собой необычный вариант обучения. На платформе с помощью текстовых запросов можно создать совершенно новую историю с персонажами и заданиями (нейросеть создает историю, в которой рассказывается еще и теория, а также генерируются задания по ней).
 
-Currently, two official plugins are available:
+Создавался для хакатона(сейчас дорабатываю его), проект получил первое место.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Сейчас для демонстрации в проект уже загружен тест, сгенерированной нейросетью.
