@@ -92,27 +92,27 @@ function Variants(props) {
 
             if (props.taskType == 'correct' && index == props.answer) {
             
-                return <VariantWrapper correct>
+                return <VariantWrapper correct key={index}>
                             {variant}
                        </VariantWrapper>
             }
 
             else if (props.taskType == 'uncorrect' && index == props.selected) {
 
-                return <VariantWrapper uncorrect>
+                return <VariantWrapper uncorrect key={index}>
                             {variant}
                         </VariantWrapper>
             }
 
 
             else if (index == props.selected) {
-                return <VariantWrapper selected onClick={() => {handleClick(index)}}>
+                return <VariantWrapper selected key={index} onClick={() => {handleClick(index)}}>
                             {variant}
                         </VariantWrapper>
             }
 
             else {
-                return <VariantWrapper default onClick={() => {handleClick(index)}}>
+                return <VariantWrapper default key={index} onClick={() => {handleClick(index)}}>
                             {variant}
                         </VariantWrapper>
             }

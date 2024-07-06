@@ -25,6 +25,9 @@ const ReplicaTextElement = styled.div`
     font-family: Blazma;
     font-size: 40px;
     color: var(--lesson_color);
+    margin-left: 100px;
+    margin-right: 50px;
+    line-height: 45px
     
 `
 const CloudImgElement = styled.img`

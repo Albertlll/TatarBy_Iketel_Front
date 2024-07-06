@@ -49,32 +49,76 @@ function Game(props) {
     const task = quest.tasks[step];
     const character = quest.image_url;
 
-    const [tasksData, setTasks] = useState(quest.tasks);
+    // const [tasksData, setTasksData] = useState(quest.tasks);
     // const [tasks_data, setTasks] = useState();
 
     const [selected, setSelected] = useState();
     const [taskType, setTaskType] = useState('default');
 
+    const [results, setResults] = useState(Array(8).fill(0));
+
     console.log(task.title)
 
     const handleNext = () => {
         setTaskType('default')
-        if (step == tasksData.length - 1) {
+        setSelected(0)
+        setStep(prev => prev + 1)
+
+        if (step == results.length - 1) {
+            setQindex(prev => prev + 1)
+            setStep(0)
+            // setTasks(quest.tasks)
+            setResults(Array(8).fill(0))
             
         }
-        setStep(prev => prev + 1)
     }
-
     const handleCheck = () => {
-        if (selected == task.answer){
-            setTaskType('correct')
-        }else{
-            setTaskType('uncorrect')
-        }
-    }
+        const updatedResults = results.map((result, index) => {
+          if (index == step) {
+            return selected == task.answer ? 2 : 1;
+          }
+          return result;
+        });
+      
+        setResults(updatedResults);
+        setTaskType(selected == task.answer ? 'correct' : 'uncorrect');
+        // setSelected(null);
+      };
+
+    // const handleCheck = () => {
+    //     const updatedResults = results.map((result, index) => {
+    //         if (index === step) {
+    //           return selected === task.answer ? 1 : 2;
+    //         }
+    //         return result;
+    //       });
+          
+
+    //     if (selected == task.answer){
+    //         console.log(step)
+    //         console.log(results)
+
+            
+
+    //         setResults(prev => [...prev.splice(step, 1, 1)])
+    //         setTaskType('correct')
+            
+    //     }else{
+    //         console.log(step)
+    //         console.log(results)
+
+    //         setResults(prev => [...prev.splice(step, 1, 2)])
+    //         setTaskType('uncorrect')
+    //     }
+
+    //     setStep(prev => prev + 1)
+
+
+    // }
+
     return (
         <GameElem>
-            <Progress tasks={tasksData}/>
+            <Progress tasks={results}/>
             <CharacterBlock character={character} question={task.title}/>
             <Variants selected={selected} setSelected={setSelected} variants={task.variants} answer={task.answer} taskType={taskType}/>
             <NextBtnCont>

@@ -33,13 +33,13 @@ function Progress(props) {
     return (
         <ProgressElem>
             {props.tasks.map((val, index) => {
-                return val.state == 1 ?
-                    <RightElement/>
+                return val == 1 ?
+                    <RightElement key={index}/>
                     : 
-                    val.state == 2 ?
-                    <NotRightElement/>
+                    val == 2 ?
+                    <NotRightElement key={index}/>
                     :
-                    <DefaultElement/>
+                    <DefaultElement key={index}/>
             })}
 
         </ProgressElem>
