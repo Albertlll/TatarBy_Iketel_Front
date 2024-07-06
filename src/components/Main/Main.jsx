@@ -1,9 +1,6 @@
 import { useState, useEffect, useContext } from "react";
-import httoClient from "../../../httoClient";
-import Menu from "../../Shared/Menu/Menu";
-import Navbar from "../../Shared/Navbar/Navbar";
+import httoClient from "../../httoClient";
 import s from './Main.module.css'
-import { UserContext } from '../../../../contexts/CotextProviderUser';
 import EnterToQuest from "./components/EnterToQuest/EnterToQuest";
 import Lesson from "./components/Lesson/Lesson";
 import { Route, Routes } from "react-router-dom";

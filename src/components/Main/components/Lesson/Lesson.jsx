@@ -187,7 +187,6 @@ function Lesson() {
     }
     else if (statetype.type === 2) {
         specialclass = s.uncorrect
-
     }
 
     return (

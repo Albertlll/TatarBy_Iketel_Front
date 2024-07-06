@@ -1,6 +1,4 @@
 import s from './CreatePrompt.module.css'
-import Menu from '../../../../Shared/Menu/Menu';
-import Navbar from '../../../../Shared/Navbar/Navbar';
 import { useState } from "react";
 function CreatePrompt() {
 
