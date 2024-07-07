@@ -5,6 +5,8 @@ import Progress from "./Progress";
 import OKSANA from "./OKSANA.json";
 import CharacterBlock from "./CharacterBlock";
 import Variants from "./Variants";
+import Result from "./Results";
+
 
 const GameElem = styled.div`
     position: relative;
@@ -38,6 +40,8 @@ function Game(props) {
 
     const locate = useLocation()
 
+    const [count, setCount] = useState(0)
+    const [showResult, setResultShow] = useState(false);
     // const [gameData, setGameData] = useState(locate.state);
     const [gameData, setGameData] = useState(OKSANA);
 
@@ -52,7 +56,7 @@ function Game(props) {
     // const [tasksData, setTasksData] = useState(quest.tasks);
     // const [tasks_data, setTasks] = useState();
 
-    const [selected, setSelected] = useState();
+    const [selected, setSelected] = useState(0);
     const [taskType, setTaskType] = useState('default');
 
     const [results, setResults] = useState(Array(8).fill(0));
@@ -60,11 +64,20 @@ function Game(props) {
     console.log(task.title)
 
     const handleNext = () => {
+
+        if (step == results.length - 1 &&
+            qIndex == gameData.length - 1
+        ) {   
+            setResultShow(true)
+            return;
+        }
+
         setTaskType('default')
         setSelected(0)
         setStep(prev => prev + 1)
 
         if (step == results.length - 1) {
+
             setQindex(prev => prev + 1)
             setStep(0)
             // setTasks(quest.tasks)
@@ -75,7 +88,11 @@ function Game(props) {
     const handleCheck = () => {
         const updatedResults = results.map((result, index) => {
           if (index == step) {
-            return selected == task.answer ? 2 : 1;
+            if (selected == task.answer){
+                setCount(prev => prev + 1);
+                return 2;
+            }
+            return 1;
           }
           return result;
         });
@@ -117,6 +134,10 @@ function Game(props) {
     // }
 
     return (
+        
+        showResult ?   
+        <Result count={count}/>
+        :
         <GameElem>
             <Progress tasks={results}/>
             <CharacterBlock character={character} question={task.title}/>
@@ -134,6 +155,10 @@ function Game(props) {
             </NextBtnCont>
 
         </GameElem>
+        
+
+
+
     );
 }
 
