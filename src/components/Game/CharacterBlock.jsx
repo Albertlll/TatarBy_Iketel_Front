@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import cloud from "./assets/img/cloud.svg"
+import CloudImgElement from "./shared/CloudImgElement"
+
+
 const CharacterBlockElement = styled.div`
     width: 100%;
     display: flex;
@@ -30,13 +33,7 @@ const ReplicaTextElement = styled.div`
     line-height: 45px
     
 `
-const CloudImgElement = styled.img`
 
-    width: 200px;
-    height: auto;
-    border-radius: 20px;
-    
-`
 
 
 function CharacterBlock(props) {

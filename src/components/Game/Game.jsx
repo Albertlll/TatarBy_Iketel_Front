@@ -6,6 +6,8 @@ import OKSANA from "./OKSANA.json";
 import CharacterBlock from "./CharacterBlock";
 import Variants from "./Variants";
 import Result from "./Results";
+import Replica from "./Replica";
+import NextBtn from "./shared/Button";
 
 
 const GameElem = styled.div`
@@ -23,24 +25,13 @@ const NextBtnCont = styled.div`
     margin-top: 36px;
 `
 
-const NextBtn = styled.button`
-    width: 280px;
-    height: 85px;
-    border-radius: 20px;
-    font-family: Blazma;
-    border: solid 4px var(--${props => props.color});
-    background-color: transparent;
-        font-size: 40px;
-    
-    color: var(--${props => props.color});
-
-`
-
 function Game(props) {
 
     const locate = useLocation()
 
     const [count, setCount] = useState(0)
+
+    const [showReplica, setShowReplica] = useState(true);
     const [showResult, setResultShow] = useState(false);
     // const [gameData, setGameData] = useState(locate.state);
     const [gameData, setGameData] = useState(OKSANA);
@@ -67,9 +58,14 @@ function Game(props) {
 
         if (step == results.length - 1 &&
             qIndex == gameData.length - 1
-        ) {   
+        ) {
             setResultShow(true)
             return;
+        }
+
+
+        if (step == results.length - 1) {
+            setShowReplica(true)
         }
 
         setTaskType('default')
@@ -134,12 +130,17 @@ function Game(props) {
     // }
 
     return (
+
+
+        showReplica ? 
         
+        <Replica setShowReplica={setShowReplica} replica={quest.replika} character={character}/>
+        :
         showResult ?   
         <Result count={count}/>
         :
         <GameElem>
-            <Progress tasks={results}/>
+            <Progress tasks={results} step={step}/>
             <CharacterBlock character={character} question={task.title}/>
             <Variants selected={selected} setSelected={setSelected} variants={task.variants} answer={task.answer} taskType={taskType}/>
             <NextBtnCont>

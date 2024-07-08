@@ -20,7 +20,7 @@ const VariantWrapper = styled.button`
     height: 100%;
     justify-content: center;
     align-items: center;
-
+    cursor: pointer;
 
 
     ${props => props.selected ? 

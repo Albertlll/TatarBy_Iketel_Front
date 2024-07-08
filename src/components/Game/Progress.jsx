@@ -21,6 +21,13 @@ const NotRightElement = styled.div`
     background-color: var(--fg_color);
 `
 
+const NowElement = styled.div`
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+    background-color: var(--now_task_color);
+`
+
 const DefaultElement = styled.div`
     width: 64px;
     height: 64px;
@@ -38,6 +45,10 @@ function Progress(props) {
                     : 
                     val == 2 ?
                     <NotRightElement key={index}/>
+                    :
+
+                    props.step == index ?
+                    <NowElement key={index}/>
                     :
                     <DefaultElement key={index}/>
             })}
