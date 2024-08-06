@@ -8,7 +8,7 @@ import Variants from "./Variants";
 import Result from "./Results";
 import Replica from "./Replica";
 import NextBtn from "./shared/Button";
-
+import httpClient from "../../httpClient";
 
 const GameElem = styled.div`
     position: relative;
@@ -33,7 +33,8 @@ function Game(props) {
 
     const [showReplica, setShowReplica] = useState(true);
     const [showResult, setResultShow] = useState(false);
-    const [gameData, setGameData] = useState(locate.state);
+    const [gameData, setGameData] = useState(OKSANA);
+    const [isGameDataLoaded, setIsGameDataLoaded] = useState(false);
     // const [gameData, setGameData] = useState(OKSANA);
 
     const [qIndex, setQindex] = useState(0);
@@ -53,6 +54,18 @@ function Game(props) {
     const [results, setResults] = useState(Array(8).fill(0));
 
     console.log(task.title)
+
+
+
+
+    useEffect(() => {
+        httpClient.post("/lesson", locate.state).then(
+            function (response) {
+                setGameData(response.data)
+                setIsGameDataLoaded(true)
+                console.log(response.data)
+            });
+    }, []);
 
     const handleNext = () => {
 
@@ -132,6 +145,7 @@ function Game(props) {
     return (
 
 
+        isGameDataLoaded ?
         showReplica ? 
         
         <Replica setShowReplica={setShowReplica} replica={quest.replika} character={character}/>
@@ -156,9 +170,8 @@ function Game(props) {
             </NextBtnCont>
 
         </GameElem>
-        
-
-
+        :
+        <div>Загрузка...</div>
 
     );
 }

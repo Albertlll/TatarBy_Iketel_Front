@@ -12,8 +12,8 @@ const CharacterCardElem = styled.div`
 `
 
 const CharacterTextareaElem = styled.textarea`
-    left: 10px;
-    top: 10px;
+    left: 15px;
+    top: 15px;
 
     font-family: Blazma;
     height: calc(100% - 30px);
@@ -37,20 +37,30 @@ const CharacterTitleElem = styled.h3`
     font-family: 'Blazma';
 `
 
-function CharacterCard() {
+function CharacterCard(props) {
+
+    const setCharacterState = (setParametr, setValue) => {
+        props.stateSetter((prev) => {return {...prev, [props.number] : {...prev[props.number], [setParametr] : setValue}}})
+    }
+
+
+
     return (
     <CharacterCardElem>
         {/* <CharacterTitleElem>Первый</CharacterTitleElem> */}
         <TextAreaWrapper>
-            <CharacterTextareaElem placeholder="Имя персонажа"></CharacterTextareaElem>
+            <CharacterTextareaElem onChange={(e) => setCharacterState('name', e.target.value)} placeholder={"Имя персонажа " + (props.number + 1)}></CharacterTextareaElem>
         </TextAreaWrapper>
+
         <TextAreaWrapper>
-            <CharacterTextareaElem placeholder="Внешность персонажа"></CharacterTextareaElem>
+            <CharacterTextareaElem onChange={(e) => setCharacterState('look_description', e.target.value)} placeholder={"Внешность персонажа " + (props.number + 1)}></CharacterTextareaElem>
         </TextAreaWrapper>
+
         <TextAreaWrapper>
-            <CharacterTextareaElem placeholder="Характер персонажа"></CharacterTextareaElem>
+            <CharacterTextareaElem onChange={(e) => setCharacterState('character_description', e.target.value)} placeholder={"Характер персонажа " + (props.number + 1)}></CharacterTextareaElem>
         </TextAreaWrapper>
-    </CharacterCardElem>);
+    </CharacterCardElem>
+    );
 }
 
 export default CharacterCard;

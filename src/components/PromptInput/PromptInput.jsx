@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import CharacterCard from "./components/CharacterCard";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const TextAreaWrapper = styled.div`
     height: 100%;
@@ -78,29 +80,57 @@ const SendPromptBtn = styled.button`
 `
 
 function PromptInput() {
+
+    const [charactersState, stateSetter] = useState({
+    0 : {'name': '', 'character_description': '', 'look_description':''},
+    1 : {'name': '', 'character_description': '', 'look_description':''},
+    2 : {'name': '', 'character_description': '', 'look_description':''},
+    3 : {'name': '', 'character_description': '', 'look_description':''}
+    });
+
+    const navigate = useNavigate()
+
+    const [mainPrompt, setMainPrompt] = useState('')
+    const [additional, setAdditional] = useState('')
+    const [themes, setThemes] = useState('')
+
+    const postPrompt = async () => {
+
+        navigate('/lesson',  { state:
+            {
+            'description': mainPrompt,
+            'additional_requirements': additional,
+            'themes': themes.split(';'),
+            'npcs_list': [charactersState[0], charactersState[1], charactersState[2], charactersState[3]]
+            }
+        })
+        
+    }
+
     return (
         <PromptInputContainerElem>
 
         <GridElem>
                 <TextAreaWrapper>
-                    <TextareaElem placeholder="Концепт"></TextareaElem>
+                    <TextareaElem onChange={(e) => setMainPrompt(e.target.value)} placeholder="Концепт"></TextareaElem>
                 </TextAreaWrapper>
 
                 <TextAreaWrapper>
-                    <TextareaElem placeholder="Темы через точку с запятой"></TextareaElem>
+                    <TextareaElem onChange={(e) => setThemes(e.target.value)} placeholder="Темы через точку с запятой"></TextareaElem>
                 </TextAreaWrapper>
 
                 <TextAreaWrapper>
-                    <TextareaElem placeholder="Дополнительные требования"></TextareaElem>
+                    <TextareaElem onChange={(e) => setAdditional(e.target.value)} placeholder="Дополнительные требования"></TextareaElem>
                 </TextAreaWrapper>
 
-                <SendPromptBtn>Создать сказку!</SendPromptBtn>    
+                <SendPromptBtn onClick={() => postPrompt()}>Создать сказку!</SendPromptBtn>    
 
                 <InsideGridElem>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
+
+                    <CharacterCard number={0} stateSetter={stateSetter}></CharacterCard>
+                    <CharacterCard number={1} stateSetter={stateSetter}></CharacterCard>
+                    <CharacterCard number={2} stateSetter={stateSetter}></CharacterCard>
+                    <CharacterCard number={3} stateSetter={stateSetter}></CharacterCard>
 
                 </InsideGridElem>                
         </GridElem>

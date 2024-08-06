@@ -8,12 +8,12 @@ function CreatePrompt() {
     const navigate = useNavigate();
 
     const PostPrompt = async () => {
-        console.log({
-            'description': prompt_main,
-            'additional_requirements': additional,
-            'themes_list': themes.split(';'),
-            'npcs_list': [ch1, ch2, ch3, ch4]
-        })
+        // console.log({
+        //     'description': prompt_main,
+        //     'additional_requirements': additional,
+        //     'themes_list': themes.split(';'),
+        //     'npcs_list': [ch1, ch2, ch3, ch4]
+        // })
         const response = await httpClient.post("/lesson",
         {
             'description': prompt_main,
