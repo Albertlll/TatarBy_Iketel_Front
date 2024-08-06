@@ -8,6 +8,12 @@ function CreatePrompt() {
     const navigate = useNavigate();
 
     const PostPrompt = async () => {
+        console.log({
+            'description': prompt_main,
+            'additional_requirements': additional,
+            'themes_list': themes.split(';'),
+            'npcs_list': [ch1, ch2, ch3, ch4]
+        })
         const response = await httpClient.post("/lesson",
         {
             'description': prompt_main,
@@ -27,9 +33,9 @@ function CreatePrompt() {
 
 
 
-    const [prompt_main, setPromptmain] = useState(null);
-    const [themes, setThemes] = useState(null);
-    const [additional, setAdditional] = useState(null);
+    const [prompt_main, setPromptmain] = useState('');
+    const [themes, setThemes] = useState('');
+    const [additional, setAdditional] = useState('');
 
     const [ch1, setCh1] = useState({'name': '', 'character_description': '', 'look_description':''});
     const [ch2, setCh2] = useState({'name': '', 'character_description': '', 'look_description':''});

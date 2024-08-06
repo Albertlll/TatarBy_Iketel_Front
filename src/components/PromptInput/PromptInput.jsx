@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import CharacterCard from "./components/CharacterCard";
 
-const TextAreaWrapper = styled.div`
+export const TextAreaWrapper = styled.div`
     height: 100%;
     border: 3px solid var(--fg_color);;
     border-radius: 25px;
@@ -23,7 +23,7 @@ const PromptInputElemWrapper = styled.div`
 `
 
 
-const TextareaElem = styled.textarea`
+export const TextareaElem = styled.textarea`
     font-family: Blazma;
     height: calc(100% - 30px);
     width: 80%;
@@ -53,6 +53,16 @@ const GridElem = styled.div`
     justify-content: space-around;
 `
 
+const InsideGridElem = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+
+`
+
 function PromptInput() {
     return (
         <PromptInputContainerElem>
@@ -70,8 +80,13 @@ function PromptInput() {
                     <TextareaElem placeholder="Дополнительные требования"></TextareaElem>
                 </TextAreaWrapper>
 
+                <InsideGridElem>
                 <CharacterCard></CharacterCard>
-                
+                <CharacterCard></CharacterCard>
+                <CharacterCard></CharacterCard>
+                <CharacterCard></CharacterCard>
+
+                </InsideGridElem>                
         </GridElem>
 
         </PromptInputContainerElem>
