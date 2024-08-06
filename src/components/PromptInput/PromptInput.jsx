@@ -46,7 +46,7 @@ const GridElem = styled.div`
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(3, 400px);
-    grid-template-rows: repeat(3, 200px) 50px;
+    grid-template-rows: repeat(3, 200px) 60px;
     gap: 30px;
     align-content: center;
 
@@ -63,6 +63,18 @@ const InsideGridElem = styled.div`
     height: 100%;
     gap: 50px;
 
+`
+const SendPromptBtn = styled.button`
+    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--fg_color);
+    color: var(--bg_color);
+    font-size: 25px;
+    cursor: pointer;
+    font-family: 'Blazma';
 `
 
 function PromptInput() {
@@ -81,6 +93,8 @@ function PromptInput() {
                 <TextAreaWrapper>
                     <TextareaElem placeholder="Дополнительные требования"></TextareaElem>
                 </TextAreaWrapper>
+
+                <SendPromptBtn>Создать сказку!</SendPromptBtn>    
 
                 <InsideGridElem>
                 <CharacterCard></CharacterCard>
