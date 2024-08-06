@@ -1,13 +1,14 @@
 import s from './CreatePrompt.module.css'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import httpClient from "../../httpClient";
 function CreatePrompt() {
 
     const [key, setKey] = useState(null);
     const navigate = useNavigate();
 
     const PostPrompt = async () => {
-        const response = await httoClient.post("/lesson",
+        const response = await httpClient.post("/lesson",
         {
             'description': prompt_main,
             'additional_requirements': additional,

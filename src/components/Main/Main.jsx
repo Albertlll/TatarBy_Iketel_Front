@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import httoClient from "../../httoClient";
+// import httoClient from "../../httoClient";
 import s from './Main.module.css'
 import EnterToQuest from "./components/EnterToQuest/EnterToQuest";
 import Lesson from "./components/Lesson/Lesson";
