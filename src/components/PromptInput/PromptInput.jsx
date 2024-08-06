@@ -57,6 +57,7 @@ const InsideGridElem = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    column-span: 2;
     width: 100%;
     height: 100%;
     gap: 30px;

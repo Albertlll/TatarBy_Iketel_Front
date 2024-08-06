@@ -39,7 +39,7 @@ const CharacterTitleElem = styled.h3`
 function CharacterCard() {
     return (
     <CharacterCardElem>
-        <CharacterTitleElem>Первый хуервый</CharacterTitleElem>
+        <CharacterTitleElem>Первый</CharacterTitleElem>
         <TextAreaWrapper>
             <CharacterTextareaElem placeholder="Имя персонажа"></CharacterTextareaElem>
         </TextAreaWrapper>
