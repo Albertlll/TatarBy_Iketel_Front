@@ -9,7 +9,7 @@ import Result from "./Results";
 import Replica from "./Replica";
 import NextBtn from "./shared/Button";
 import httpClient from "../../httpClient";
-
+import Loader from "./Loader/Loader";
 const GameElem = styled.div`
     position: relative;
     margin-left: auto;
@@ -171,7 +171,7 @@ function Game(props) {
 
         </GameElem>
         :
-        <div>Загрузка...</div>
+        <Loader></Loader>
 
     );
 }
