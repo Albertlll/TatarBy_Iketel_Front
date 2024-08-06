@@ -34,20 +34,21 @@ const CharacterTextareaElem = styled.textarea`
 const CharacterTitleElem = styled.h3`
     font-size: 30px;
     color: var(--lesson_color);
+    font-family: 'Blazma';
 `
 
 function CharacterCard() {
     return (
     <CharacterCardElem>
-        <CharacterTitleElem>Первый</CharacterTitleElem>
+        {/* <CharacterTitleElem>Первый</CharacterTitleElem> */}
         <TextAreaWrapper>
             <CharacterTextareaElem placeholder="Имя персонажа"></CharacterTextareaElem>
         </TextAreaWrapper>
         <TextAreaWrapper>
-            <CharacterTextareaElem placeholder="Внешность"></CharacterTextareaElem>
+            <CharacterTextareaElem placeholder="Внешность персонажа"></CharacterTextareaElem>
         </TextAreaWrapper>
         <TextAreaWrapper>
-            <CharacterTextareaElem placeholder="Характер"></CharacterTextareaElem>
+            <CharacterTextareaElem placeholder="Характер персонажа"></CharacterTextareaElem>
         </TextAreaWrapper>
     </CharacterCardElem>);
 }

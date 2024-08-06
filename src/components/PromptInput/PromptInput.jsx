@@ -46,7 +46,7 @@ const GridElem = styled.div`
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(3, 400px);
-    grid-template-rows: repeat(3, 250px);
+    grid-template-rows: repeat(3, 200px) 50px;
     gap: 30px;
     align-content: center;
 
@@ -57,10 +57,11 @@ const InsideGridElem = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    column-span: 2;
+    grid-column: span 3;
+    grid-row: span 4;
     width: 100%;
     height: 100%;
-    gap: 30px;
+    gap: 50px;
 
 `
 
