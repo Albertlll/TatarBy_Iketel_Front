@@ -1,0 +1,81 @@
+import styled from "styled-components";
+import CharacterCard from "./components/CharacterCard";
+
+const TextAreaWrapper = styled.div`
+    height: 100%;
+    border: 3px solid var(--fg_color);;
+    border-radius: 25px;
+    width: 100%;    
+`
+
+const PromptInputContainerElem = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    `
+const PromptInputElemWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+`
+
+
+const TextareaElem = styled.textarea`
+    font-family: Blazma;
+    height: calc(100% - 30px);
+    width: 80%;
+    left: 30px;
+    position: relative;
+    top: 30px;
+
+    border-radius: 25px;
+    color: var(--fg_color);
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 25px;
+    // overflow: hidden;
+    resize: none;
+    border: none;
+    outline: none;
+`
+
+const GridElem = styled.div`
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: repeat(3, 250px);
+    gap: 30px;
+    align-content: center;
+
+    justify-content: space-around;
+`
+
+function PromptInput() {
+    return (
+        <PromptInputContainerElem>
+
+        <GridElem>
+                <TextAreaWrapper>
+                    <TextareaElem placeholder="Концепт"></TextareaElem>
+                </TextAreaWrapper>
+
+                <TextAreaWrapper>
+                    <TextareaElem placeholder="Темы через точку с запятой"></TextareaElem>
+                </TextAreaWrapper>
+
+                <TextAreaWrapper>
+                    <TextareaElem placeholder="Дополнительные требования"></TextareaElem>
+                </TextAreaWrapper>
+
+                <CharacterCard></CharacterCard>
+                
+        </GridElem>
+
+        </PromptInputContainerElem>
+    );
+}
+
+export default PromptInput;

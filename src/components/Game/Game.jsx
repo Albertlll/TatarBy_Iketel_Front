@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import {styled} from "styled-components"
 import { useLocation } from "react-router-dom";
 import Progress from "./Progress";
-import OKSANA from "./OKSANA.json";
+import OKSANA from "./knightII (5).json";
 import CharacterBlock from "./CharacterBlock";
 import Variants from "./Variants";
 import Result from "./Results";
@@ -33,8 +33,8 @@ function Game(props) {
 
     const [showReplica, setShowReplica] = useState(true);
     const [showResult, setResultShow] = useState(false);
-    // const [gameData, setGameData] = useState(locate.state);
-    const [gameData, setGameData] = useState(OKSANA);
+    const [gameData, setGameData] = useState(locate.state);
+    // const [gameData, setGameData] = useState(OKSANA);
 
     const [qIndex, setQindex] = useState(0);
 
@@ -42,7 +42,7 @@ function Game(props) {
     const [step, setStep] = useState(0);
 
     const task = quest.tasks[step];
-    const character = quest.image_url;
+    const character = 'data:image/png;base64, ' + quest.image_url;
 
     // const [tasksData, setTasksData] = useState(quest.tasks);
     // const [tasks_data, setTasks] = useState();
