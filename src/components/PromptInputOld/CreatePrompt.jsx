@@ -51,18 +51,18 @@ function CreatePrompt() {
 
                 <div className={s.left_block}>
                     <div className={s.textarea_input_wrapper}>
-                    <textarea className={s.textarea_input} type="text" placeholder="Концепт" onChange={(e) => setPromptmain(e.target.value)}/>
+                    <textarea value='Девочка оксана хочет изучить татарский. Ей в этом помогут Курт Кобейн и Лунтик ' className={s.textarea_input} type="text" placeholder="Концепт" onChange={(e) => setPromptmain(e.target.value)}/>
                     </div>
                     
                     <div className={s.inp_wrapper}>
-                        <input className={s.enter_input} type="username" placeholder="Темы (через точку с запятой)" onChange={(e) => setThemes(e.target.value)}/>
+                        <input value='Дружба; Школа' className={s.enter_input} type="username" placeholder="Темы (через точку с запятой)" onChange={(e) => setThemes(e.target.value)}/>
                     </div>
 
                     <div className={s.inp_wrapper}>
-                        <input className={s.enter_input} type="username" placeholder="Дополнительные требования" onChange={(e) => setAdditional(e.target.value)}/>
+                        <input value='Все в стиле аниме' className={s.enter_input} type="username" placeholder="Дополнительные требования" onChange={(e) => setAdditional(e.target.value)}/>
                     </div>
 
-                    <button  className={s.enter_btn} type="button" onClick={() => PostPrompt()}>Создать</button>
+                    <button  className={s.enter_btn} type="button" onClick={() => {navigate('/')}}>Создать</button>
 
                 </div>
 
@@ -71,18 +71,18 @@ function CreatePrompt() {
 
                     <div>
                         <div className={s.inp_wrapper + " " + s.ch}>
-                            <input className={s.enter_input} type="username" placeholder="Имя персонажа 1" onChange={(e) => setCh1(
+                            <input value='Оксана' className={s.enter_input} type="username" placeholder="Имя персонажа 1" onChange={(e) => setCh1(
                                 {'name': e.target.value, 'character_description': ch1.character_description, 'look_description': ch1.look_description})}/>
                         </div>
 
                         <div className={s.textarea_input_wrapper + " " + s.ch + " " + s.ch_area}>
-                            <textarea className={s.textarea_input} type="text" placeholder="Внешность 1" onChange={(e) => setCh1(
+                            <textarea value='Школьница с красными волосами. Невысокая' className={s.textarea_input} type="text" placeholder="Внешность 1" onChange={(e) => setCh1(
                                 {'name': ch1.name, 'character_description': ch1.character_description, 'look_description': e.target.value}
                             )}/>
                         </div>
                         
                         <div className={s.textarea_input_wrapper+ " " + s.ch + " " + s.ch_area}>
-                            <textarea className={s.textarea_input} type="text" placeholder="Характер 1" onChange={(e) => setCh1(
+                            <textarea value='Добрая и очень любит изучать языки' className={s.textarea_input} type="text" placeholder="Характер 1" onChange={(e) => setCh1(
                                 {'name': ch1.name, 'character_description': e.target.value, 'look_description': ch1.look_description}
                             )}/>
                         </div>
@@ -91,18 +91,18 @@ function CreatePrompt() {
 
                     <div>
                         <div className={s.inp_wrapper + " " + s.ch}>
-                            <input className={s.enter_input} type="username" placeholder="Имя персонажа 2" onChange={(e) => setCh2(
+                            <input value='Курт Кобейн' className={s.enter_input} type="username" placeholder="Имя персонажа 2" onChange={(e) => setCh2(
                                 {'name': e.target.value, 'character_description': ch2.character_description, 'look_description': ch2.look_description})}/>
                         </div>
 
                         <div className={s.textarea_input_wrapper + " " + s.ch + " " + s.ch_area}>
-                            <textarea className={s.textarea_input} type="text" placeholder="Внешность 2" onChange={(e) => setCh2(
+                            <textarea value='Блондин рок гитарист' className={s.textarea_input} type="text" placeholder="Внешность 2" onChange={(e) => setCh2(
                                 {'name': ch2.name, 'character_description': ch2.character_description, 'look_description': e.target.value}
                             )}/>
                         </div>
                         
                         <div className={s.textarea_input_wrapper+ " " + s.ch + " " + s.ch_area}>
-                            <textarea className={s.textarea_input} type="text" placeholder="Характер 2" onChange={(e) => setCh2(
+                            <textarea  value='Грустный и любит рок' className={s.textarea_input} type="text" placeholder="Характер 2" onChange={(e) => setCh2(
                                 {'name': ch2.name, 'character_description': e.target.value, 'look_description': ch2.look_description}
 
                             )}/>
@@ -112,18 +112,18 @@ function CreatePrompt() {
 
                     <div>
                         <div className={s.inp_wrapper + " " + s.ch}>
-                            <input className={s.enter_input} type="username" placeholder="Имя персонажа 3" onChange={(e) => setCh3(
+                            <input value='Лунтик' className={s.enter_input} type="username" placeholder="Имя персонажа 3" onChange={(e) => setCh3(
                                 {'name': e.target.value, 'character_description': ch3.character_description, 'look_description': ch3.look_description})}/>
                         </div>
 
                         <div className={s.textarea_input_wrapper + " " + s.ch + " " + s.ch_area}>
-                            <textarea className={s.textarea_input} type="text" placeholder="Внешность 1" onChange={(e) => setCh3(
+                            <textarea value='Пришелец с луны с 4-мя ушами' className={s.textarea_input} type="text" placeholder="Внешность 1" onChange={(e) => setCh3(
                                 {'name': ch3.name, 'character_description': ch3.character_description, 'look_description': e.target.value}
                             )}/>
                         </div>
                         
                         <div className={s.textarea_input_wrapper+ " " + s.ch + " " + s.ch_area}>
-                            <textarea className={s.textarea_input} type="text" placeholder="Характер 1" onChange={(e) => setCh3(
+                            <textarea value='Добрый, любит всем помогать' className={s.textarea_input} type="text" placeholder="Характер 1" onChange={(e) => setCh3(
                                 {'name': ch3.name, 'character_description': e.target.value, 'look_description': ch3.look_description}
 
                             )}/>

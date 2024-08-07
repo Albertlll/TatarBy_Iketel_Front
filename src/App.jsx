@@ -12,10 +12,10 @@ function App() {
     <div>
 
         <Routes>
+          <Route path="/*" element={<GameCreated />} />
           <Route path="/lesson" element={<Game />} />
           <Route path="/promptinput" element={<PromptInput />} />
           <Route path="/oldpromptinput" element={<CreatePrompt />} />
-          <Route path="/createdlesson" element={<GameCreated />} />
           {/* <Route path="/lesson" element={<Lesson />} /> */}
 
         </Routes>
