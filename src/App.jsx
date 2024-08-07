@@ -5,6 +5,7 @@ import Lesson from "./components/Main/components/Lesson/Lesson";
 import Game from './components/Game/Game';
 import PromptInput from './components/PromptInput/PromptInput';
 import CreatePrompt from './components/PromptInputOld/CreatePrompt';
+import GameCreated from './components/Game/GameCreated';
 function App() {
 
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/lesson" element={<Game />} />
           <Route path="/promptinput" element={<PromptInput />} />
           <Route path="/oldpromptinput" element={<CreatePrompt />} />
+          <Route path="/createdlesson" element={<GameCreated />} />
           {/* <Route path="/lesson" element={<Lesson />} /> */}
 
         </Routes>
