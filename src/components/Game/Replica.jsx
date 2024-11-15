@@ -1,61 +1,75 @@
 import styled from "styled-components";
-import cloud from "./assets/img/cloud_replica.svg";
 import CharacterElement from "./shared/CloudImgElement";
 import NextBtn from "./shared/Button";
 
 
 const ReplicaCharacterElement = styled(CharacterElement)`
-    position: absolute;
-    margin-left: 91px;
+
 `
 
 
 const ReplicaNextBtn = styled(NextBtn)`
-    margin-left: auto;
-    margin-top: 28px;
-    background-color: var(--fg_color);
-    color: var(--bg_color);
+
     
 `
 
 const ReplicaElem = styled.div`
 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+
+    gap: 30px;
+    width: 100vw;
+    height: 100vh;
+
+    box-sizing: border-box;
+
+
+    padding: 50px;
+
+    @media (max-width: 650px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+
+  }
+
 `
 
-const CloudImg = styled.img`
-    position: relative;
-`
 
 const CloudContainer = styled.div`
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-
-    // transform: translateX(-46.5px);
-    width: 1284.5px;
-    height: 793px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: end;
+    gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    @media (max-width: 650px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
 `
 
 const ReplicaText = styled.div`
     font-family: Blazma;
     font-size: 30px;
-    color: var(--lesson_color);
-    position: absolute;
-    width: 1089px;
-    height: 736px;
-    word-wrap: break-word;
-    margin-left: 104px;
-    margin-top: 26px;
+    height: 100%;
     text-align: justify;
+    color: var(--lesson_color);
+    padding: 31px;
+    border: 3px solid var(--fg_color);
+    border-radius: 25px;
+    
+    
 `
 
 
 const ReplicaNextBtnContainer = styled.div`
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
+
 `
 
 
@@ -78,7 +92,6 @@ function Replica(props) {
                 {props.replica}
             </ReplicaText>   
 
-            <CloudImg src={cloud}/>
 
             <ReplicaNextBtnContainer>
                 <ReplicaNextBtn onClick={handleContinue} color="fg_color">Понятно!</ReplicaNextBtn>

@@ -10,6 +10,7 @@ import Replica from "./Replica";
 import NextBtn from "./shared/Button";
 import httpClient from "../../httpClient";
 import Loader from "./Loader/Loader";
+
 const GameElem = styled.div`
     position: relative;
     margin-left: auto;
@@ -25,7 +26,7 @@ const NextBtnCont = styled.div`
     margin-top: 36px;
 `
 
-function Game(props) {
+function Game() {
 
     const locate = useLocation()
 
@@ -64,6 +65,10 @@ function Game(props) {
                 setGameData(response.data)
                 setIsGameDataLoaded(true)
                 console.log(response.data)
+            }).catch(() => {
+                setGameData(OKSANA)
+                setIsGameDataLoaded(true)
+                // console.log()
             });
     }, []);
 
