@@ -12,6 +12,13 @@ const NextBtn = styled.button`
     color: var(--${props => props.color});
     cursor: pointer;
 
+
+    @media (max-width: 1111px) {
+
+        font-size: 24px;
+
+    }
+
 `
 
 export default NextBtn

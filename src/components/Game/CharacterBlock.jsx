@@ -34,13 +34,18 @@ const CloudElement = styled.div`
 
 const ReplicaTextElement = styled.div`
 
-    font-size: 24px;
     font-weight: 700;
     line-height: 32px;
     font-family: Blazma;
     font-size: 40px;
     color: var(--lesson_color);
-    line-height: 45px;   
+    line-height: 45px;  
+    
+    @media (max-width: 1111px) {
+        font-size: 24px;
+        line-height: 28px;
+    
+}
 
 `
 

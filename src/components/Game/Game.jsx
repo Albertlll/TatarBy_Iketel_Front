@@ -29,6 +29,9 @@ const GameElem = styled.div`
         height: 100vh;
 
         box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
 }
 `
 
@@ -37,6 +40,14 @@ const NextBtnCont = styled.div`
     width: 100%;
     justify-content: end;
     margin-top: 36px;
+
+    @media (max-width: 1111px) {
+
+    justify-self: end;
+    align-self: flex-end;
+
+    
+}
 `
 
 function Game() {

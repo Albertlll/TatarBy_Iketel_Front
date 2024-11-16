@@ -11,6 +11,8 @@ function App() {
     <div>
 
         <Routes>
+        <Route path="/lesson" element={<Game />} />
+
           <Route path="/lesson" element={<Game />} />
           <Route path="/promptinput" element={<PromptInput />} />
           <Route path="/oldpromptinput" element={<CreatePrompt />} />

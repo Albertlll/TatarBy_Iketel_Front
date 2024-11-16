@@ -9,6 +9,12 @@ const VariantsCont = styled.div`
     margin-top: 36px;
     @media (max-width: 1111px) {
         grid-template-columns: repeat(1, 1fr);
+
+
+        align-self: stretch;
+
+        justify-self: stretch;
+
     }
 
 `
@@ -21,6 +27,8 @@ const VariantWrapper = styled.button`
     display:flex;
     width: 100%;
     height: 100%;
+
+
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -75,6 +83,13 @@ const VariantWrapper = styled.button`
     font-family: Blazma;
     font-size: 40px;
     position: relative;
+
+    @media (max-width: 1111px) {
+
+        font-size: 24px;
+
+
+}
 
 `
 

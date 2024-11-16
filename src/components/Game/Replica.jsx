@@ -26,13 +26,12 @@ const ReplicaElem = styled.div`
 
     box-sizing: border-box;
 
-
     padding: 50px;
 
     @media (max-width: 650px) {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
 
   }
 
@@ -40,22 +39,34 @@ const ReplicaElem = styled.div`
 
 
 const CloudContainer = styled.div`
+    height: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: end;
     gap: 30px;
-    width: 100%;
+    align-self: stretch;
     box-sizing: border-box;
+
     @media (max-width: 650px) {
-    flex-direction: column;
-    align-items: center;
+        flex-direction: column;
+        align-items: center;
+
+
+        height: 0;
+
+        /* max-height: min-content; */
+        box-sizing: border-box;
+
+    flex: 1;
+
   }
 
 `
 
 const ReplicaText = styled.div`
     font-family: Blazma;
+
     font-size: 30px;
     height: 100%;
     text-align: justify;
@@ -63,12 +74,16 @@ const ReplicaText = styled.div`
     padding: 31px;
     border: 3px solid var(--fg_color);
     border-radius: 25px;
+    overflow: scroll;
+
     
     
 `
 
 
 const ReplicaNextBtnContainer = styled.div`
+    justify-self: center;
+
 
 `
 
