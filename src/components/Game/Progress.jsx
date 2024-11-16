@@ -12,6 +12,16 @@ const RightElement = styled.div`
     border-radius: 20px;
     background-color: var(--fail_color);
 
+    @media (max-width: 1111px) {
+
+
+        width: 40px;
+height: 40px;
+
+        border-radius: 9px;
+
+    }
+
 `
 
 const NotRightElement = styled.div`
@@ -19,6 +29,14 @@ const NotRightElement = styled.div`
     height: 64px;
     border-radius: 20px;
     background-color: var(--fg_color);
+
+    @media (max-width: 1111px) {
+
+width: 40px;
+height: 40px;
+border-radius: 9px;
+
+}
 `
 
 const NowElement = styled.div`
@@ -26,6 +44,14 @@ const NowElement = styled.div`
     height: 64px;
     border-radius: 20px;
     background-color: var(--now_task_color);
+
+    @media (max-width: 1111px) {
+
+width: 40px;
+height: 40px;
+
+        border-radius: 9px;
+}
 `
 
 const DefaultElement = styled.div`
@@ -33,6 +59,14 @@ const DefaultElement = styled.div`
     height: 64px;
     border-radius: 20px;
     background-color: var(--default_lesson);
+
+    @media (max-width: 1111px) {
+
+width: 40px;
+height: 40px;
+border-radius: 9px;
+
+}
 
 `
 

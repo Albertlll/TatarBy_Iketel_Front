@@ -7,6 +7,9 @@ const VariantsCont = styled.div`
     column-gap: 69px;
     grid-template-columns: repeat(2, 1fr);
     margin-top: 36px;
+    @media (max-width: 1111px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
 `
 

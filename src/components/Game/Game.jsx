@@ -15,8 +15,21 @@ const GameElem = styled.div`
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: 1072px;
+    max-width: 1072px;
     top: 69px;
+
+    @media (max-width: 1111px) {
+
+        padding-top: 10px;
+        top: 0;
+
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100vw;
+        height: 100vh;
+
+        box-sizing: border-box;
+}
 `
 
 const NextBtnCont = styled.div`

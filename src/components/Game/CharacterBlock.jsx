@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import cloud from "./assets/img/cloud.svg"
 import CloudImgElement from "./shared/CloudImgElement"
 
 
@@ -7,31 +6,42 @@ const CharacterBlockElement = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
 
-    margin-top: 30px
-    
+    margin-top: 30px;
+
+
+    gap: 30px;
 `
 
 const CloudElement = styled.div`
-    width: 820px;
+    align-self: stretch;
+
+    /* width: 100%; */
+    
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border: 4px solid var(--lesson_color);
+    border-radius: 30px;
+    box-sizing: content-box;
+
+    padding: 20px;
+
+
 `
 
 const ReplicaTextElement = styled.div`
+
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
-    position: absolute;
     font-family: Blazma;
     font-size: 40px;
     color: var(--lesson_color);
-    margin-left: 100px;
-    margin-right: 50px;
-    line-height: 45px
-    
+    line-height: 45px;   
+
 `
 
 
@@ -41,7 +51,6 @@ function CharacterBlock(props) {
         <CharacterBlockElement>
             <CloudImgElement src={props.character} alt="" />
             <CloudElement>
-                <img src={cloud} alt=""/>
                 <ReplicaTextElement>{props.question}</ReplicaTextElement>
             </CloudElement>
         </CharacterBlockElement>
