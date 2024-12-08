@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
+
+
+
 const VariantsCont = styled.div`
     display: grid;
     width: 100%;
@@ -8,12 +11,12 @@ const VariantsCont = styled.div`
     grid-template-columns: repeat(2, 1fr);
     margin-top: 36px;
     @media (max-width: 1111px) {
-        grid-template-columns: repeat(1, 1fr);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
 
-
-        align-self: stretch;
-
-        justify-self: stretch;
+        gap: 0;
+        height: 100%;
 
     }
 

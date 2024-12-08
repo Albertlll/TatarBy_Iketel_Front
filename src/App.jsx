@@ -11,11 +11,11 @@ function App() {
     <div>
 
         <Routes>
-        <Route path="/lesson" element={<Game />} />
+          <Route path="/" element={<Game />} />
 
-          <Route path="/lesson" element={<Game />} />
+          {/* <Route path="/lesson" element={<Game />} />
           <Route path="/promptinput" element={<PromptInput />} />
-          <Route path="/oldpromptinput" element={<CreatePrompt />} />
+          <Route path="/oldpromptinput" element={<CreatePrompt />} /> */}
           {/* <Route path="/lesson" element={<Lesson />} /> */}
 
         </Routes>

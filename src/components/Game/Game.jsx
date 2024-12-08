@@ -39,7 +39,8 @@ const NextBtnCont = styled.div`
     display: flex;
     width: 100%;
     justify-content: end;
-    margin-top: 36px;
+    margin-top: 38px;
+    margin-bottom: 18px;
 
     @media (max-width: 1111px) {
 
