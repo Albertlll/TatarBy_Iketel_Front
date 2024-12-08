@@ -214,12 +214,12 @@ height: 150px;
     grid-template-columns: repeat(2, 1fr);
     margin-top: 36px;
     @media (max-width: 1111px) {
-        grid-template-columns: repeat(1, 1fr);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
 
-
-        align-self: stretch;
-
-        justify-self: stretch;
+        gap: 0;
+        height: 100%;
 
     }
 
@@ -455,7 +455,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     display: flex;
     width: 100%;
     justify-content: end;
-    margin-top: 36px;
+    margin-top: 38px;
+    margin-bottom: 18px;
 
     @media (max-width: 1111px) {
 
