@@ -24,7 +24,7 @@ function Register() {
 
             <div className={s.infoCont}>
 
-                <h1>
+                <h1 className=" text-[60px]">
                     Икетель
                 </h1>
 

@@ -5,7 +5,7 @@ function Enter() {
     return (
         <div className={s.cont}>
 
-            <h1>Икетель</h1>
+            <h1 className=" text-[60px]">Икетель</h1>
             <Link to="/login">
                 <Button className={s.enterBtn}> Войти</Button>
             </Link>

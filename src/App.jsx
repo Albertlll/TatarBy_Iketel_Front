@@ -12,6 +12,7 @@ import HomePage from './components/HomePage/HomePage';
 import useAuthStore from './components/Enter/stores/authStore';
 import { useEffect } from 'react';
 import GuestEnter from './components/GuestEnter/GuestEnter';
+import GamesLayout from './components/Games/GamesLayout';
 function App() {
 
 
@@ -23,16 +24,21 @@ function App() {
     checkAuth();
   }, [checkAuth]);
 
+
+  useEffect(() => {
+    console.log("Привет привет")
+  }, [])
+
   return (
     <div>
 
         <Routes>
-          {/* <Route path="/" element={<Game />} /> */}
           <Route path="/login" element={<Auth />} />
           <Route path="/register" element={<Register />} />
           <Route path="/enter" element={<Enter />} />
           <Route path="/enter/guest-enter" element={<GuestEnter />} />
 
+          <Route path="/game" element={<GamesLayout />} />
 
 
           <Route

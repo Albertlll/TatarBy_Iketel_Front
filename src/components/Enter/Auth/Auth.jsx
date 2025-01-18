@@ -4,23 +4,23 @@ import Input from "../../kit/Input/Input";
 import s from "./Auth.module.css"
 function Auth(props) {
     return ( 
-        <div className={s.cont}>
+        <div className=" w-[100vw] h-[100vh] flex justify-center items-center flex-col">
 
-            <h1>Икетель</h1>
+            <h1 className=" text-[60px]">Икетель</h1>
             
-            <h2>Рәхим итегез! </h2>
+            <h2 className=" text-[20px] text-fgСolor">Рәхим итегез! </h2>
 
-            <div className={s.inpForm}>
+            <div className=" flex w-[400px] mt-[30px] gap-[30px] flex-col">
                 <Input placeholder="имя пользователя или почта"/>
                 <Input placeholder="пароль"/>
                 <Button>Войти</Button> 
 
 
-                <div className={s.linksCont}>
+                <div className=" w-full flex justify-between">
 
-                    <Link to="/register" className={s.link}>Создать аккаунт</Link>
+                    <Link to="/register" className=" hover:text-subFgColor">Создать аккаунт</Link>
 
-                    <Link className={s.link}>Забыли пароль</Link>
+                    <Link className=" hover:text-subFgColor">Забыли пароль</Link>
 
 
                 </div>

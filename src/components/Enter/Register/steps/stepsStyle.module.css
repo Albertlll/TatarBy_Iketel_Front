@@ -4,6 +4,7 @@
     gap: 20px;
     height: 100%;
     align-items: center;
+    color: #38ff40;
 }
 
 .batyr {
@@ -14,7 +15,8 @@
 
 .label {
     margin-top: 10px;
-    font-size: 30px;
+    font-size: 50px;
     max-width: 400px;
     text-align: center;
 }
+
