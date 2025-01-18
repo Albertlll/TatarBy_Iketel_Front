@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import GamesLayout from '../GamesLayout';
+import Mission from './Info/Mission';
 
 function Fairytail() {
 
@@ -7,7 +8,10 @@ function Fairytail() {
 
     return ( 
         <GamesLayout>
-            
+
+
+            <Mission/>
+
         </GamesLayout>
      );
 }

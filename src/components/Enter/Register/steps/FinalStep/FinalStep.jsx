@@ -12,18 +12,29 @@ function FinalStep() {
     const { nextStep, prevStep, updateData } = useRegistrationStore();
     const { register } = useAuthStore();
 
+    const { email, password } = useRegistrationStore();
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+
     const regReq = async () => {
+      setIsLoading(true);
+      setError(null);
       try {
         await register(email, password);
         alert('Registration successful!');
       } catch (error) {
-        alert('Registration failed.');
+        setError(error.message || 'Registration failed');
+        alert('Registration failed: ' + error.message);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     useEffect(() => {
-      regReq();
-    })
+      if (email && password) {
+        regReq();
+      }
+    }, [email, password]);
     
 //   const [code, setCode] = useState('');
 

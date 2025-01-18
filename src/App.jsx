@@ -32,7 +32,7 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <>
 
         <Routes>
           <Route path="/login" element={<Auth />} />
@@ -78,7 +78,7 @@ function App() {
           {/* <div className='main'>
 
       </div> */}
-    </div>
+    </>
 
   )
 }

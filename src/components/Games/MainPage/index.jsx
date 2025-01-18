@@ -46,7 +46,7 @@ function MainPage() {
 
 
 
-            <div className="mt-[20px] justify-between gap-[20px] text-[17px] flex">
+            <div className="mt-[20px] justify-between gap-[20px] text-[19px] flex">
 
                 <div className="flex flex-col items-center">
 
@@ -84,7 +84,7 @@ function MainPage() {
                 {
                     data.map((value, key) => {
                         return (
-                            <BoldBtn onClick={() => {navigate(`fairytail/${value.id}`)}} key={key} accent className="w-full flex items-center justify-center">
+                            <BoldBtn onClick={() => {navigate(`fairytail/${value.id}`)}} key={key} accent className="w-full flex items-center justify-center text-[20px]">
                                     {value.name}
                             </BoldBtn>
                         )

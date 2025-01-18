@@ -19,6 +19,9 @@ export default {
       boldBtnColor: '#9FD6A1'
 
       // ...
+    },
+    fontFamily: {
+      'write': ['WriteFont']
     }
   },
   plugins: [],

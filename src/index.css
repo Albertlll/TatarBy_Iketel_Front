@@ -24,6 +24,12 @@
   --default_lesson: #787878;
   /* overflow: hidden; */
 }
+
+@font-face {
+  font-family: 'WriteFont';
+  font-display: swap;
+  src: url(./writeFont.ttf);
+}
 }
 
 
@@ -45,4 +51,9 @@ h2 {
 
 img{
   image-rendering: pixelated;
+}
+
+
+html, body, #root {
+  height: 100%;
 }
