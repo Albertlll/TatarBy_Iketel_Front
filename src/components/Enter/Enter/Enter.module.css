@@ -1,0 +1,20 @@
+.cont {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.enterBtn {
+    width: 300px;
+    
+}
+
+
+h1 {
+    font-size: 60px;
+    color: var(--fg_color);
+}

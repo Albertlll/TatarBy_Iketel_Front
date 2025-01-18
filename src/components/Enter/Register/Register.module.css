@@ -1,0 +1,45 @@
+.cont {
+    width: 100vw;
+    height: 100vh;
+
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.infoCont {
+
+    margin-top: 100px;
+
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+
+.progress {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--progress-bg); /* Цвет фона */
+    border: none;
+    overflow: hidden; /* Чтобы скруглённые углы работали */
+  }
+  
+  /* Стили для заполненной части прогресс-бара */
+  .progress::-webkit-progress-value {
+    background-color: var(--fg-color); /* Цвет прогресса */
+    border-radius: 4px;
+  }
+  
+  .progress::-moz-progress-bar {
+    background-color: var(--fg_color);; /* Цвет прогресса для Firefox */
+    border-radius: 4px;
+  }

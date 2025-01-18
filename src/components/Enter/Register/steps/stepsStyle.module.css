@@ -1,0 +1,13 @@
+.cont{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    align-items: center;
+}
+
+.batyr {
+    width: 35%;
+    height: auto;
+    image-rendering: pixelated;
+}

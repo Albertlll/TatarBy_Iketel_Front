@@ -5,6 +5,8 @@ import EnterToQuest from "./components/EnterToQuest/EnterToQuest";
 import Lesson from "./components/Lesson/Lesson";
 import { Route, Routes } from "react-router-dom";
 import CreatePrompt from  "./components/CreatePrompt/CreatePrompt"
+import Register from "../Enter/Register/Register";
+import Auth from "../Enter/Auth/Auth";
 function  Main() {
     const {user, setUser} = useContext(UserContext)
     // useEffect(() => {
@@ -37,6 +39,10 @@ function  Main() {
                 <Route path="/" element={<EnterToQuest/>}/>
                 <Route path="/lesson" element={<Lesson/>}/>
                 <Route path="/create" element={<CreatePrompt/>}/>
+
+                <Route path="/auth" element={<Register/>}/>
+                <Route path="/register" element={<Auth/>}/>
+
             </Routes>
             {/* <h1>
                 { user ? user.username : 'Anonymous'}
