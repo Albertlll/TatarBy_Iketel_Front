@@ -7,7 +7,7 @@ import Lesson from './components/Main/components/Lesson/Lesson.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename='/TatarBy_Iketel_Front'>
+    <BrowserRouter>
 
         <App/>
 

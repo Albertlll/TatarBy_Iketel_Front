@@ -13,6 +13,8 @@ import useAuthStore from './components/Enter/stores/authStore';
 import { useEffect } from 'react';
 import GuestEnter from './components/GuestEnter/GuestEnter';
 import GamesLayout from './components/Games/GamesLayout';
+import Fairytail from './components/Games/Fairytail';
+import MainPage from './components/Games/MainPage';
 function App() {
 
 
@@ -38,7 +40,11 @@ function App() {
           <Route path="/enter" element={<Enter />} />
           <Route path="/enter/guest-enter" element={<GuestEnter />} />
 
-          <Route path="/game" element={<GamesLayout />} />
+
+          <Route path="/game/fairytail/:id" element={<Fairytail />} />
+
+
+          <Route path="/game" element={<MainPage />} />
 
 
           <Route
