@@ -1,6 +1,6 @@
 import './App.css'
 import Main from './components/Main/Main'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Lesson from "./components/Main/components/Lesson/Lesson";
 import Game from './components/Game/Game';
 import PromptInput from './components/PromptInput/PromptInput';
@@ -8,16 +8,51 @@ import CreatePrompt from './components/PromptInputOld/CreatePrompt';
 import Auth from './components/Enter/Auth/Auth';
 import Register from './components/Enter/Register/Register';
 import Enter from './components/Enter/Enter/Enter';
+import HomePage from './components/HomePage/HomePage';
+import useAuthStore from './components/Enter/stores/authStore';
+import { useEffect } from 'react';
+import GuestEnter from './components/GuestEnter/GuestEnter';
 function App() {
+
+
+  const { checkAuth, isAuthenticated } = useAuthStore();
+
+
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
 
   return (
     <div>
 
         <Routes>
-          <Route path="/" element={<Game />} />
-          <Route path="/auth" element={<Auth />} />
+          {/* <Route path="/" element={<Game />} /> */}
+          <Route path="/login" element={<Auth />} />
           <Route path="/register" element={<Register />} />
           <Route path="/enter" element={<Enter />} />
+          <Route path="/enter/guest-enter" element={<GuestEnter />} />
+
+
+
+          <Route
+          path="/"
+          element={
+            isAuthenticated ? (
+              <HomePage />
+            ) : (
+              <Navigate to="/enter" replace />
+            )
+          }
+        />
+
+{/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+
+
+
+
+
+
 
           <Route path="/promptinput" element={<PromptInput />} />
 

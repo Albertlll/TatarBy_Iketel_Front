@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import axios from 'axios';
+import api from '../../../api';
 
 const useAuthStore = create((set) => ({
   user: null, // Текущий пользователь
@@ -9,11 +9,11 @@ const useAuthStore = create((set) => ({
   // Функция для регистрации
   register: async (email, password) => {
     try {
-      const response = await axios.post('/api/auth/register', { email, password });
-      const { user, token } = response.data;
+      const response = await api.post('/register', { email, password });
+      const { access_token } = response.data;
 
-      set({ user, token, isAuthenticated: true });
-      localStorage.setItem('token', token); // Сохраняем токен в localStorage
+      set({ token: access_token, isAuthenticated: true });
+      localStorage.setItem('token', access_token); // Сохраняем токен в localStorage
     } catch (error) {
       console.error('Registration failed:', error);
       throw error;
@@ -23,11 +23,11 @@ const useAuthStore = create((set) => ({
   // Функция для входа
   login: async (email, password) => {
     try {
-      const response = await axios.post('/api/auth/login', { email, password });
-      const { user, token } = response.data;
+      const response = await api.post('/token', { username: email, password });
+      const { access_token } = response.data;
 
-      set({ user, token, isAuthenticated: true });
-      localStorage.setItem('token', token); // Сохраняем токен в localStorage
+      set({ token: access_token, isAuthenticated: true });
+      localStorage.setItem('token', access_token); // Сохраняем токен в localStorage
     } catch (error) {
       console.error('Login failed:', error);
       throw error;
@@ -41,10 +41,17 @@ const useAuthStore = create((set) => ({
   },
 
   // Функция для проверки аутентификации при загрузке приложения
-  checkAuth: () => {
+  checkAuth: async () => {
     const token = localStorage.getItem('token');
     if (token) {
-      set({ token, isAuthenticated: true });
+      try {
+        // Проверяем валидность токена
+        await api.get('/protected'); // Замените на ваш защищенный эндпоинт
+        set({ token, isAuthenticated: true });
+      } catch (error) {
+        console.error('Token validation failed:', error);
+        localStorage.removeItem('token'); // Удаляем невалидный токен
+      }
     }
   },
 }));

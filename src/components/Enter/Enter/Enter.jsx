@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../kit/Button/Button";
 import s from "./Enter.module.css"
 function Enter() {
@@ -5,9 +6,13 @@ function Enter() {
         <div className={s.cont}>
 
             <h1>Икетель</h1>
+            <Link to="/login">
+                <Button className={s.enterBtn}> Войти</Button>
+            </Link>
 
-            <Button content="Войти" className={s.enterBtn}/>
-            <Button content="Ввести код" className={s.enterBtn}/>
+            <Link to="guest-enter">
+                <Button className={s.enterBtn}> Ввести код</Button>
+            </Link>
         </div>
     );
 }

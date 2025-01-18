@@ -7,9 +7,15 @@ import PasswordScreen from "./steps/Password/PasswordStep";
 import NameScreen from "./steps/NameSurname/NameSurmameStep";
 import SelectSex from "./steps/SelectSex/SelectSex";
 import FinalStep from "./steps/FinalStep/FinalStep";
+import StartStep from "./steps/StartStep/StartStep";
+import { useEffect } from "react";
 
 function Register() {
-    const { step } = useRegistrationStore();
+    const { step, reset } = useRegistrationStore();
+
+    useEffect(() => {
+        reset()
+    }, [])
 
     console.log(step)
 
@@ -26,7 +32,7 @@ function Register() {
 
             </div>
 
-
+            {step === 0 && <StartStep/>}
             {step === 1 && <AgeScreen />}
             {step === 2 && <EmailScreen />}
             {step === 3 && <PasswordScreen />}

@@ -8,7 +8,7 @@ import Variants from "./Variants";
 import Result from "./Results";
 import Replica from "./Replica";
 import NextBtn from "./shared/Button";
-import httpClient from "../../httpClient";
+import httpClient from "../../api";
 import Loader from "./Loader/Loader";
 
 const GameElem = styled.div`

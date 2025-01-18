@@ -31,3 +31,21 @@ h1 {
 h2 {
     margin-top: 52px;
 }
+
+.inpForm {
+    display: flex;
+    width: 400px;
+    margin-top: 30px;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.linksCont {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link:hover {
+    color: var(--sub_fg_color);
+}

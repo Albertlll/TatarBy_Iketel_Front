@@ -11,3 +11,10 @@
     height: auto;
     image-rendering: pixelated;
 }
+
+.label {
+    margin-top: 10px;
+    font-size: 30px;
+    max-width: 400px;
+    text-align: center;
+}

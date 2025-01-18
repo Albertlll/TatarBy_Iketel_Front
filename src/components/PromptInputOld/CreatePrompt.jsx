@@ -1,7 +1,7 @@
 import s from './CreatePrompt.module.css'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import httpClient from "../../httpClient";
+import httpClient from "../../api";
 function CreatePrompt() {
 
     const [key, setKey] = useState(null);

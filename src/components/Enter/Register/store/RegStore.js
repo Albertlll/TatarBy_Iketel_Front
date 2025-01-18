@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 const useRegistrationStore = create((set) => ({
-  step: 1, // Текущий шаг регистрации
+  step: 0, // Текущий шаг регистрации
   age: null, // Возраст
   email: '', // Почта
   code: '', // Код подтверждения
@@ -23,7 +23,7 @@ const useRegistrationStore = create((set) => ({
   // Метод для сброса данных
   reset: () =>
     set({
-      step: 1,
+      step: 0,
       age: null,
       email: '',
       code: '',
