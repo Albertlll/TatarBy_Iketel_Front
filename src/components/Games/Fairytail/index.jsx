@@ -5,6 +5,7 @@ import SelectAnswer from './Tasks/ReadStory';
 import ReadStory from './Tasks/ReadStory';
 import InputTextTask from './Tasks/Answer/InputTextTask';
 import SelectVariant from './Tasks/Answer/SelectVariant';
+import MissionComlete from './Info/MissionComplete';
 
 function Fairytail() {
 
@@ -14,7 +15,7 @@ function Fairytail() {
         <GamesLayout>
 
 
-            <SelectVariant/>
+            <MissionComlete/>
 
         </GamesLayout>
      );
