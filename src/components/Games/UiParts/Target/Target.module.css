@@ -1,0 +1,11 @@
+.dotline {
+    height: 4px;
+    width: 100%;
+    image-rendering: pixelated;
+    background:
+      radial-gradient(circle closest-side,#A7B8C2 98%,#0000) 50%/20px 100%,
+      linear-gradient(90deg,#A7B8C2 50%,#0000 0)             50%/40px 100%;
+
+
+    border-radius: 50px;
+}

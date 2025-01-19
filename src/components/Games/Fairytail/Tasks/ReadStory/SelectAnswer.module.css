@@ -1,0 +1,11 @@
+.message--right::before {
+    content: '';
+    position: absolute;
+    right: -12px; /* Позиция хвостика */
+    top: 10px; /* Отступ сверху */
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #007bff; /* Цвет обводки хвостика */
+  }
