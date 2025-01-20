@@ -1,9 +1,16 @@
 import Button from '../../../../kit/Button/Button';
+import Ochpochcoins from '../../../UiParts/Ochpochcoins';
 import MissionSticker from './MissionCompleteSticker.png'
-
+import { motion, AnimatePresence } from 'motion/react';
 function MissionComlete() {
-    return ( 
-        <div className=' w-full h-full flex items-center justify-center'>
+    return (
+        <AnimatePresence>
+
+        <motion.div initial={{ scale: 0.1}} animate={{scale : 1}} transition={{ type : "spring",                     
+                    stiffness: 150,      // Жесткость пружины (чем больше, тем "жестче" пружина)
+                    damping: 10,         // Затухание (чем меньше, тем больше "пружинистость")
+                    mass: 0.5,  }} className=' w-full h-full flex items-center justify-center'>
+
 
         <div className='flex gap-3 flex-col'>
 
@@ -17,15 +24,12 @@ function MissionComlete() {
             <img src={MissionSticker} alt="" />
         </div>
 
-        <Button className=" w-full" >
-            Вперед!
-        </Button>
-
-
-
         </div>
 
-    </div>
+    </motion.div>
+
+    </AnimatePresence>
+
      );
 }
 

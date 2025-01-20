@@ -5,26 +5,33 @@ import CharacterBlock from "../../CharacterBlock";
 import cloud from "./MessageCloud.svg"
 import { cn } from "../../../../../lib/utils";
 
-function GiveAnswerLayout({children}) {
+function GiveAnswerLayout({children, handleNext}) {
 
 
 
     return ( 
-        <div>
-            <Target percent={50} title={
+        <>
+            {/* <Target percent={50} title={
                 {"rus" : "Бабушка купила молоко",
                  "tat" : "Эбиге сот сатып аларга"
                 }
-            }/>
-            <div className="mt-[100px] flex flex-col">
-
-            <CharacterBlock
-            image={"https://img.freepik.com/free-vector/hand-drawn-old-lady-cartoon-cartoon-illustration_52683-115975.jpg"}
-            replica={"Миңа бераз ярдәм кирәк, бакчада җиләк утыртканда"}/>
+            }/> */}
+            <div className=" h-full flex flex-col justify-between">
 
 
-            <img src={cloud} className=" self-end w-[150px] mt-[10px]" alt="" />
+            <div className="flex w-full h-full items-center justify-center">
 
+                <div className=" flex w-full flex-col gap-2">
+
+                    <CharacterBlock
+                    image={"https://img.freepik.com/free-vector/hand-drawn-old-lady-cartoon-cartoon-illustration_52683-115975.jpg"}
+                    replica={"Миңа бераз ярдәм кирәк, бакчада җиләк утыртканда"}/>
+
+
+                    <img src={cloud} className=" self-end w-[150px] mt-[10px]" alt="" />
+
+                </div>
+            </div>
 
 
 
@@ -36,17 +43,12 @@ function GiveAnswerLayout({children}) {
 
                     {children}
 
-                
-
-                <Button className=" text-[25px] mt-[20px]">
-                    Далее
-                </Button>
 
                 </div>
 
             </div>
 
-        </div>
+        </>
      );
 }
 

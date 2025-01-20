@@ -58,4 +58,24 @@ export const getProtectedData = async () => {
   return api.get('/protected');
 };
 
+
+
+
+
+
+// Запрос на получение ochpochcoins
+export const fetchOchpochcoins = () => api.get('/ochpochcoins');
+
+// Запрос на получение следующего шага
+export const fetchNextStep = (currentStepId) =>
+  api.post('/next-step', { currentStepId });
+
+// Запрос на отправку текущего шага
+export const submitCurrentStep = (currentStep) =>
+  api.post('/submit-step', currentStep);
+
+
+export const fetchFairytailData = (id) =>
+  api.get(`/fairytails/${id}`).then(response => response.data);
+
 export default api;

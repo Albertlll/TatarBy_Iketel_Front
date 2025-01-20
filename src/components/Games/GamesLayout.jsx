@@ -9,31 +9,13 @@ import MainPage from "./MainPage";
 function GamesLayout({children}) {
 
 
-    useEffect(() => {
-
-    }, [])
-
-
-
-
-
-
-
     return ( 
-        <div className="w-full h-full p-[50px]  box-border ">
-
-            <Ochpochcoins/>
-
+        <div className="w-full h-full p-[50px] flex flex-col justify-between box-border ">
 
             {
                 children
             }
-
-
             {/* <MainPage/> */}
-
-
-            
 
         </div>
      );

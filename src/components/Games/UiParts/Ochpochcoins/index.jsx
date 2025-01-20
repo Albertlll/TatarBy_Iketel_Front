@@ -1,7 +1,8 @@
+import { cn } from '../../../../lib/utils';
 import ochpoch from './ochpochmac.png'
-function Ochpochcoins() {
+function Ochpochcoins({classname}) {
     return (
-        <div className=' absolute flex gap-[10px] top-2 left-6 items-center text-[30px] text-[white] ' >
+        <div className={cn('flex gap-[10px] items-center text-[30px] text-[white] ', classname)} >
 
             <img src={ochpoch} alt="" />
 

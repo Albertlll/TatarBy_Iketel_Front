@@ -15,6 +15,7 @@ import GuestEnter from './components/GuestEnter/GuestEnter';
 import GamesLayout from './components/Games/GamesLayout';
 import Fairytail from './components/Games/Fairytail';
 import MainPage from './components/Games/MainPage';
+import Prompt from './components/Prompt';
 function App() {
 
 
@@ -45,6 +46,7 @@ function App() {
 
 
           <Route path="/game" element={<MainPage />} />
+          <Route path="/create" element={<Prompt/>} />
 
 
           <Route
@@ -66,7 +68,7 @@ function App() {
 
 
 
-          <Route path="/promptinput" element={<PromptInput />} />
+          {/* <Route path="/promptinput" element={<PromptInput />} /> */}
 
 
           {/* <Route path="/lesson" element={<Game />} />

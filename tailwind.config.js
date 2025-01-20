@@ -17,7 +17,8 @@ export default {
       defaultLesson: '#787878',
       boldBtnShadow: '#598F5B',
       boldBtnColor: '#9FD6A1',
-      notAccent : '#37464F'
+      notAccent : '#37464F',
+      lightFail : '#CCA293'
 
       // ...
     },
